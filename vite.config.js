@@ -25,6 +25,7 @@ export default defineConfig({
                 lessons: resolve(__dirname, '/lessons.html'),
                 shareBoard: resolve(__dirname, '/shareBoard.html'),
                 sharedProject: resolve(__dirname, '/sharedProject.html'),
+                sharedFrame: resolve(__dirname, '/sharedFrame.html'),
             },
         }
     },
@@ -41,6 +42,10 @@ export default defineConfig({
         // Port to run the dev server on
         port: 3000,
         // Open the browser automatically
-        open: true
+        open: true,
+        watch: {
+            // Tell Vite's file watcher to ignore WebStorm's project settings folder
+            ignored: ['**/.idea/**']
+        }
     }
 })
